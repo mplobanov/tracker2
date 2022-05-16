@@ -1,0 +1,10 @@
+.detailsRow {
+    display: flex;
+    flex-direction: column;
+    font-family: Nunito, sans-serif;
+    gap: 10px;
+}
+
+.detailsHeader {
+    font-size: 16px;
+}
