@@ -18,7 +18,7 @@ export const UserPage = () => {
         loading, user
     } = useUidUser(params.userId as string);
 
-    const {loading: myLoading, user: myUser, logout} = useUser();
+    const {user: myUser, logout} = useUser();
 
 
     const myPage = useMemo(() => myUser?.uid === params.userId, [myUser?.uid, params.userId]);
