@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-content: center;
+    gap: 2rem;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Nunito, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    gap: 4em;
+}
+
+.menuOption {
+    padding: 1em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menuOptionSecondary {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.menuOption:hover {
+    padding: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.2s;
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}

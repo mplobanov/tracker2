@@ -1,6 +1,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { Message } from '../models/Message';
+import type { Status } from '../models/Status';
 import type { Task } from '../models/Task';
 import type { User } from '../models/User';
 
@@ -44,27 +46,6 @@ export class DefaultService {
     }
 
     /**
-     * Verify
-     * @param token
-     * @returns string Successful Response
-     * @throws ApiError
-     */
-    public static verifyVerifyGet(
-        token: string,
-    ): CancelablePromise<string> {
-        return __request(OpenAPI, {
-            method: 'GET',
-            url: '/verify',
-            query: {
-                'token': token,
-            },
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
      * Get User
      * @param uid
      * @returns User Successful Response
@@ -81,6 +62,27 @@ export class DefaultService {
             },
             errors: {
                 404: `Not Found`,
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Task Exists
+     * @param slug
+     * @returns Message Successful Response
+     * @throws ApiError
+     */
+    public static taskExistsTaskExistsSlugGet(
+        slug: string,
+    ): CancelablePromise<Message> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/task/exists/{slug}',
+            path: {
+                'slug': slug,
+            },
+            errors: {
                 422: `Validation Error`,
             },
         });
@@ -106,6 +108,7 @@ export class DefaultService {
             body: requestBody,
             mediaType: 'application/json',
             errors: {
+                400: `Bad Request`,
                 422: `Validation Error`,
             },
         });
@@ -123,6 +126,39 @@ export class DefaultService {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/task/create',
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                400: `Bad Request`,
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Get Status List
+     * @returns Status Successful Response
+     * @throws ApiError
+     */
+    public static getStatusListStatusListGet(): CancelablePromise<Array<Status>> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/status/list',
+        });
+    }
+
+    /**
+     * Get Status List
+     * @param requestBody
+     * @returns Status Successful Response
+     * @throws ApiError
+     */
+    public static getStatusListStatusCreatePost(
+        requestBody: Status,
+    ): CancelablePromise<Status> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/status/create',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

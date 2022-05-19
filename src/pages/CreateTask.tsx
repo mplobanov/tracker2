@@ -9,6 +9,8 @@ export const DEFAULT_TASK: Task = {
     assignee_id: "",
     follower_ids: [],
     slug: "",
+    deadline: "",
+    status: ""
 }
 
 export const CreateTask = () => {

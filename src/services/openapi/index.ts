@@ -9,6 +9,7 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 export type { Comment } from './models/Comment';
 export type { HTTPValidationError } from './models/HTTPValidationError';
 export type { Message } from './models/Message';
+export type { Status } from './models/Status';
 export type { Task } from './models/Task';
 export type { User } from './models/User';
 export type { ValidationError } from './models/ValidationError';

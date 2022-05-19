@@ -12,4 +12,6 @@ export type Task = {
     assignee_id: string;
     follower_ids: Array<string>;
     slug: string;
+    deadline?: string;
+    status: string;
 };

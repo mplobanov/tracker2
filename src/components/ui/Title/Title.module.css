@@ -1,0 +1,35 @@
+.title {
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    padding-top: 10px;
+    font-family: Nunito, sans-serif;
+
+    font-weight: 700;
+    outline: none;
+    display: block;
+    width: 100%;
+    resize: none;
+    height: 3ch;
+}
+
+.big {
+    font-size: 40px;
+}
+
+.bigSkeleton {
+    font-size: 70px;
+}
+
+.smallSkeleton {
+    font-size: 25px;
+}
+
+.small {
+    font-size: 24px;
+}
+
+.skeletonContainer {
+    display: flex;
+    flex-direction: column;
+}
