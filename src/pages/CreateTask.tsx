@@ -1,5 +1,5 @@
-import {Form, FormikProps, useFormik} from "formik";
-import {Comment, DefaultService, Task} from "../services/openapi";
+import {useFormik} from "formik";
+import {DefaultService, Task} from "../services/openapi";
 
 export const DEFAULT_TASK: Task = {
     name: "",
@@ -27,7 +27,7 @@ export const CreateTask = () => {
             <form onSubmit={formik.handleSubmit}>
                 <input  {...formik.getFieldProps('name')} placeholder={'name'}/>
                 <input  {...formik.getFieldProps('slug')} placeholder={'slug'}/>
-                <input  {...formik.getFieldProps('description')} placeholder={'desc'} />
+                <input  {...formik.getFieldProps('description')} placeholder={'desc'}/>
                 <button type={'submit'}>Create</button>
             </form>
         </div>

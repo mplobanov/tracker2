@@ -1,6 +1,4 @@
-import {Avatar} from "../../components/ui/Avatar/Avatar";
-import {useEffect, useMemo, useState} from "react";
-import {DefaultService, User} from '../../services/openapi'
+import {useMemo} from "react";
 import {useParams} from "react-router-dom";
 import {useUser} from "../../utils/auth";
 import {Page} from "../../components/ui/Page/Page";
@@ -22,13 +20,13 @@ export const UserPage = () => {
 
     const {loading: myLoading, user: myUser, logout} = useUser();
 
-    
-    const myPage = useMemo(() => myUser?.uid  === params.userId, [myUser?.uid, params.userId]);
+
+    const myPage = useMemo(() => myUser?.uid === params.userId, [myUser?.uid, params.userId]);
 
 
     return (
         <Page>
-            <Header />
+            <Header/>
             <div className={styles.container}>
                 <div>
                     {loading && <Skeleton width={"200px"} height={"200px"} circle/>}
@@ -36,12 +34,12 @@ export const UserPage = () => {
                 </div>
                 <div className={styles.info}>
                     {loading && <>
-                        <Skeleton height={"45px"} />
-                        <Skeleton height={"25px"} count={5} />
+                        <Skeleton height={"45px"}/>
+                        <Skeleton height={"25px"} count={5}/>
                     </>}
                     <h1>{user?.name}</h1>
                     {myPage && <>
-                        <Button text={"Выйти"} onClick={() => logout()} />
+                        <Button text={"Выйти"} onClick={() => logout()}/>
                     </>}
                 </div>
 
