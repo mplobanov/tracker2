@@ -40,7 +40,7 @@ export const TaskList = () => {
                             <Avatar
                                 loading={!users.has(task.slug)}
                                 imageUrl={users.get(task.slug)?.photoUrl ?? ''}
-                                name={users.get(task.slug)?.name.split(' ').at(0) ?? 'x'}
+                                name={users.get(task.slug)?.name?.split(' ')?.at(0) ?? 'x'}
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     navigate(`/user/${task.assignee_id}`)
