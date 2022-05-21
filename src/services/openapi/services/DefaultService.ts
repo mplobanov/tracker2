@@ -5,6 +5,7 @@ import type { Message } from '../models/Message';
 import type { Status } from '../models/Status';
 import type { Task } from '../models/Task';
 import type { User } from '../models/User';
+import type { UserEntry } from '../models/UserEntry';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -164,6 +165,18 @@ export class DefaultService {
             errors: {
                 422: `Validation Error`,
             },
+        });
+    }
+
+    /**
+     * Get User List
+     * @returns UserEntry Successful Response
+     * @throws ApiError
+     */
+    public static getUserListUserlistGet(): CancelablePromise<Array<UserEntry>> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/userlist',
         });
     }
 

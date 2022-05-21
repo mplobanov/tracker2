@@ -12,6 +12,7 @@ export type { Message } from './models/Message';
 export type { Status } from './models/Status';
 export type { Task } from './models/Task';
 export type { User } from './models/User';
+export type { UserEntry } from './models/UserEntry';
 export type { ValidationError } from './models/ValidationError';
 
 export { DefaultService } from './services/DefaultService';
